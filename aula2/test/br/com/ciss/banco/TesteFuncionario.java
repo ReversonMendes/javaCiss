@@ -4,7 +4,7 @@ public class TesteFuncionario {
 
 	public static void main(String[] args) {
 		
-		Funcionario f1 = new Funcionario("Teste","programador");
+		Funcionario f1 = new Gerente();
 		
 		f1.setNome("Reverson");
 		f1.setDepartamento("Fabrica de Desenvolvimento");
@@ -17,8 +17,8 @@ public class TesteFuncionario {
 		f1.setEstaNaEmpresa(false);
 		f1.mostra();
 		
-		Funcionario f2 = new Funcionario();
-		Funcionario f3 = new Funcionario();
+		Funcionario f2 = new Gerente();
+		Funcionario f3 = new Gerente();
 		
 		System.out.println("Identificador = "+f1.getIdentificador());
 		System.out.println("Identificador = "+f2.getIdentificador());

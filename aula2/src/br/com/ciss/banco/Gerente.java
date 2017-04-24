@@ -31,7 +31,10 @@ public class Gerente extends Funcionario{
 	@Override
 	//agora está protegido quando chamar esse metodo do gerente será esse aqui e não do Funcionario
 	public double getBonificacao(){
-		return super.getBonificacao() + 1000;
+		//Antes não era abstrato
+		//return super.getBonificacao() + 1000;
+		//Agora é por isso não dá de usar o super melhor fazer a regra nessa classe filha e concreta
+		return (this.salario * 0.10) + 1000;
 	}
 
 }

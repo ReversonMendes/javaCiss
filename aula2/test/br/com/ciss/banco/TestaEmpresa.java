@@ -4,8 +4,8 @@ public class TestaEmpresa {
 
 	public static void main(String[] args) {
 
-		Funcionario f1 = new Funcionario();
-		Funcionario f2 = new Funcionario();
+		Funcionario f1 = new Gerente();
+		Funcionario f2 = new Gerente();
 		Empresa empresa = new Empresa();
 		
 		f1.setNome("Reverson");
@@ -34,7 +34,7 @@ public class TestaEmpresa {
 		//empresa.adicionaFuncionario(f2);
 		
 		for (int i = 0; i < 200; i++) {
-			Funcionario f = new Funcionario();
+			Funcionario f = new Gerente();
 			f.setSalario(1000 + i * 100);
 			if (!empresa.adicionaFuncionario(f)){
 				System.out.println("Está cheio");

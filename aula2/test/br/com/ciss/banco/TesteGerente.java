@@ -16,7 +16,7 @@ public class TesteGerente {
 		System.out.println("G:" + g1.getBonificacao());
 		
 		
-		Funcionario f = new Funcionario();
+		Funcionario f = new Gerente();
 		f.setSalario(5000);
 		System.out.println("F:" + f.getBonificacao());
 		

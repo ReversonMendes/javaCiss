@@ -9,7 +9,7 @@ public class TestaControleDeBonificacao {
 		funcionario1.setSalario(5000);
 		controle.registra(funcionario1);
 
-		Funcionario funcionario2 = new Funcionario();
+		Funcionario funcionario2 = new Gerente();
 		funcionario2.setSalario(1000);
 		controle.registra(funcionario2);
 

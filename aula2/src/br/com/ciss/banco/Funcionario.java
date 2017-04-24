@@ -1,6 +1,6 @@
 package br.com.ciss.banco;
 
-public class Funcionario {
+public abstract class Funcionario {
 	private String nome;
 	private String cpf;
 	private String cargo;
@@ -140,8 +140,6 @@ public class Funcionario {
 		this.setDemitido(true, dtDemissao);
 	}
 	
-	public double getBonificacao(){
-		return this.salario * 0.10;
-	}
+	public abstract double getBonificacao();
 }
 
