@@ -20,6 +20,10 @@ public class TesteGerente {
 		f.setSalario(5000);
 		System.out.println("F:" + f.getBonificacao());
 		
+		Autenticavel a = new Gerente();
+		
+		a.autentica(2345);
+		
 	}
 
 }

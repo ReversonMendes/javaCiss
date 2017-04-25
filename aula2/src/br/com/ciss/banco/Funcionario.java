@@ -1,6 +1,6 @@
 package br.com.ciss.banco;
 
-public abstract class Funcionario {
+public abstract class Funcionario implements Autenticavel{
 	private String nome;
 	private String cpf;
 	private String cargo;
@@ -141,5 +141,9 @@ public abstract class Funcionario {
 	}
 	
 	public abstract double getBonificacao();
+	
+	public boolean autentica(int senha){
+		return false;
+	}
 }
 

@@ -1,6 +1,6 @@
 package br.com.ciss.banco;
 
-public class Gerente extends Funcionario{
+public class Gerente extends Funcionario implements Autenticavel{
 	//Não precisa pois usou o extends(Herança da classe funcionario) os atributos já estão aqui
 //	private String nome;
 //	private String cpf;
@@ -36,5 +36,14 @@ public class Gerente extends Funcionario{
 		//Agora é por isso não dá de usar o super melhor fazer a regra nessa classe filha e concreta
 		return (this.salario * 0.10) + 1000;
 	}
+	
+	@Override
+	public boolean autentica(int senha) {
+		if(this.senha != senha){
+			return false;
+		}
+		return true;
+	}
+	
 
 }
