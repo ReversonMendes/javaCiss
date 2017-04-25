@@ -1,4 +1,4 @@
-package aula3;
+package br.com.ciss.banco;
 
 public class AtualizadorDeContas {
 	private double saldoTotal = 0;

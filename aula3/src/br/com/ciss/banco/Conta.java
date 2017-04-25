@@ -1,4 +1,4 @@
-package aula3;
+package br.com.ciss.banco;
 
 public abstract class Conta {
 	private double saldo;

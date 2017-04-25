@@ -1,4 +1,9 @@
-package aula3;
+package br.com.ciss.banco;
+
+import br.com.ciss.banco.AtualizadorDeContas;
+import br.com.ciss.banco.Conta;
+import br.com.ciss.banco.ContaCorrente;
+import br.com.ciss.banco.ContaPoupanca;
 
 public class TestaConta {
 

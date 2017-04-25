@@ -1,4 +1,4 @@
-package aula3;
+package br.com.ciss.banco;
 
 public class ContaPoupanca extends Conta {
 	private double saldo;
