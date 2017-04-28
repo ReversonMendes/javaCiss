@@ -16,6 +16,10 @@ public class Conta {
 		Conta.totalDeContas = Conta.totalDeContas + 1;
 	}
 
+	public Conta() {
+	}
+
+	
 	public static int getTotalDeContas() {
 		return Conta.totalDeContas;
 	}
@@ -74,6 +78,11 @@ public class Conta {
 		} else {
 			return false;
 		}
+	}
+	
+	@Override
+	public String toString(){
+		return "EU TO MALUKO";
 	}
 
 }
