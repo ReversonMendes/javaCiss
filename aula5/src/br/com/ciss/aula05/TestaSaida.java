@@ -12,9 +12,12 @@ public class TestaSaida {
 		OutputStream os = new FileOutputStream("saida.txt");
 		OutputStreamWriter osr = new OutputStreamWriter(os);
 		BufferedWriter bw = new BufferedWriter(osr);
-		
-		bw.write("ciss");
-		
+
+		bw.write("ciss ");
+		bw.write("Software ");
+		bw.write("Serviço ");
+		bw.write("Exploração \n");
+
 		bw.close();
 
 	}

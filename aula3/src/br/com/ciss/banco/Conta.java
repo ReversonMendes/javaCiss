@@ -2,6 +2,7 @@ package br.com.ciss.banco;
 
 public abstract class Conta {
 	protected double saldo;
+	private int numero;
 
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -21,4 +22,12 @@ public abstract class Conta {
 	}
 
 	public abstract void atualiza(double taxa);
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 }

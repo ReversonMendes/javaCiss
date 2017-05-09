@@ -1,6 +1,6 @@
 package br.com.ciss.banco;
 
-public class ContaCorrente extends Conta implements Tributavel {
+public class ContaCorrente extends Conta implements Tributavel, Comparable<ContaCorrente> {
 	private double saldo;
 
 	@Override
@@ -10,8 +10,20 @@ public class ContaCorrente extends Conta implements Tributavel {
 
 	@Override
 	public double calculaTributos() {
-		// TODO Auto-generated method stub
 		return this.saldo * 0.01;
+	}
+
+	@Override
+	public int compareTo(ContaCorrente outra) {
+		if (this.saldo < outra.getSaldo()) {
+			return -1;
+		}
+
+		if (this.saldo > outra.getSaldo()) {
+			return 1;
+		}
+
+		return 0;
 	}
 
 }
