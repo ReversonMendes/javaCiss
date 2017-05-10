@@ -10,13 +10,13 @@ public class TestaOrdenacaoContasPoupanca {
 	public static void main(String[] args) {
 		
 		ContaPoupanca c1 = new ContaPoupanca();
-		c1.setNumero(1973);
+		c1.setNome(1973);
 		
 		ContaPoupanca c2 = new ContaPoupanca();
-		c2.setNumero(1462);
+		c2.setNome(1462);
 		
 		ContaPoupanca c3 = new ContaPoupanca();
-		c3.setNumero(1854);
+		c3.setNome(1854);
 		
 		List<ContaPoupanca> lista = new LinkedList<>();
 		lista.add(c1);
