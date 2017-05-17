@@ -1,4 +1,4 @@
-package br.com.ciss.restfull.restfull;
+package br.com.ciss.restfull;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
