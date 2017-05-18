@@ -1,6 +1,6 @@
 package br.com.ciss.restfull.controller;
 
-import javax.websocket.server.PathParam;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +31,11 @@ public class LivroController {
 		}else{
 			throw new IllegalArgumentException("Livro não encontrado!");
 		}
+	}
+	
+	@GetMapping
+	public List<Livro> buscarTodos(){
+		return repository.findAll();
 	}
 	
 	@PostMapping
