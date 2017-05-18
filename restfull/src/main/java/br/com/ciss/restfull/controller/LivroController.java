@@ -53,8 +53,8 @@ public class LivroController {
 		
 	}
 	
-	@DeleteMapping
-	public String excluirLivro(@PathParam("id") Long id){
+	@DeleteMapping("/{id}")
+	public String excluirLivro(@PathVariable Long id){
 		repository.delete(id);
 		return "Registro ecluído com sucesso!";
 	}
