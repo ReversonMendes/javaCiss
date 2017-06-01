@@ -5,20 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="convidados")
+@Table(name = "convidados")
 public class Convidado {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+
 	private String nome;
-	
-	@Column(name="quantidade_acompanhantes")
+
+	@Column(name = "quantidade_acompanhantes")
 	private Integer qtdAcompanhantes;
+
+	@ManyToOne
+	@JoinColumn(name = "codigo_contribuicao")
+	private Contribuicao contribuicao;
 
 	public Long getCodigo() {
 		return codigo;
@@ -44,7 +50,12 @@ public class Convidado {
 		this.qtdAcompanhantes = qtdAcompanhantes;
 	}
 
+	public Contribuicao getContribuicao() {
+		return contribuicao;
+	}
 
-	
-	
+	public void setContribuicao(Contribuicao contribuicao) {
+		this.contribuicao = contribuicao;
+	}
+
 }

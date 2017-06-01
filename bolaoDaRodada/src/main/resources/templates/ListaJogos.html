@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Lista de Convidados</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+</head>
+
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title" align="center">Confrontos</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-inline" method="POST" th:action="@{/jogos}"
+				th:object="${jogo}" style="margin: 20px 0">
+				<div class="form-group">
+					<!-- Rodada -->
+					<select id="rodada" class="form-control" th:field="*{rodada}">
+						<option value="">Selecione a rodada</option>
+						<option th:each="rodada : ${rodadas}"
+							th:value="${rodada.idrodada}" th:text="${rodada.idrodada}"></option>
+					</select> <label for="exampleInputEmail1">:</label>
+					<!-- Time Casa -->
+					<select id="time_casa" class="form-control" th:field="*{time_casa}">
+						<option value="">Selecione o time de casa</option>
+						<option th:each="time : ${times}" th:value="${time.idtime}"
+							th:text="${time.nome_time}"></option>
+					</select> <label for="exampleInputEmail1">X</label>
+					<!-- Time Fora -->
+					<select id="time_fora" class="form-control" th:field="*{time_fora}">
+						<option value="">Selecione o time de fora</option>
+						<option th:each="time : ${times}" th:value="${time.idtime}"
+							th:text="${time.nome_time}"></option>
+					</select>
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+				</div>
+			</form>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Rodada</th>
+						<th align="center">Time casa</th>
+						<th></th>
+						<th>X</th>
+						<th></th>
+						<th>Time fora</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="jogo : ${jogos}">
+						<td th:text="${jogo.rodada.idrodada}"></td>
+						<td th:text="${jogo.time_casa.nome_time}" align="center"></td>
+						<td><img th:src="'../img/'+${jogo.time_casa.escudo_link}"
+							class="img-rounded" height="42" width="42" /></td>
+						<td>X</td>
+						<td><img th:src="'../img/'+ ${jogo.time_fora.escudo_link}"
+							class="img-rounded" height="42" width="42" /></td>
+						<td th:text="${jogo.time_fora.nome_time}"></td>
+						<td>
+							<div class="btn-group pull-right">
+								<a class="edit btn-sm btn btn-primary"
+									th:href="@{/palpites/novo/{id}(id=${jogo.idjogo})}">Palpitar</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

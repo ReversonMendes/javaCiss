@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ciss.gestaofesta.model.Convidado;
+import br.com.ciss.gestaofesta.repository.ContribuicaoRepository;
 import br.com.ciss.gestaofesta.repository.ConvidadosRepository;
 
 @Controller
@@ -16,6 +17,9 @@ public class ConvidadosController {
 
 	@Autowired
 	private ConvidadosRepository repository;
+	
+	@Autowired
+	private ContribuicaoRepository contribuicaoRepository;
 
 	@GetMapping
 	public ModelAndView listar() {
@@ -23,6 +27,7 @@ public class ConvidadosController {
 		ModelAndView mv = new ModelAndView("ListaConvidados");
 		mv.addObject(new Convidado());
 		mv.addObject("convidados", repository.findAll());
+		mv.addObject("contribuicoes", contribuicaoRepository.findAll());
 		return mv;
 	}
 

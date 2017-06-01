@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Bolão da Rodada</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+</head>
+
+<body style="background-color: #556">
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Palpites</h1>
+		</div>
+		<div class="panel-body">
+		<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Time</th>
+						<th>Placar</th>
+						<th></th>
+						<th>Placar</th>
+						<th>Time</th>
+						<th></th>
+					</tr>
+				</thead>
+				  <tfoot>
+				    <tr>
+				      <td><div class="btn-group">
+							<a class="edit btn-lg btn btn-primary" th:href="@{/jogos}">Jogos</a>
+							</div></td>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+				      <td>		<div class="btn-group pull-right">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Resultados</button>
+		</div></td>
+				    </tr>
+				  </tfoot>
+				<tbody>
+					<tr th:each="palpite : ${palpites}">
+						<td th:text="${palpite.nome}" ></td>
+						<td><img th:text="${palpite.jogo.time_casa.nome_time}" th:src="'../img/'+ ${palpite.jogo.time_casa.escudo_link}" class="img-rounded" height="42" width="42" /></td>
+						<td align="center" th:text="${palpite.time_casa_palpite}"></td>
+						<td align="center" >X</td>
+						<td align="center" th:text="${palpite.time_fora_palpite}" ></td>
+						<td><img th:src="'../img/'+ ${palpite.jogo.time_fora.escudo_link}"  th:text="${palpite.jogo.time_fora.nome_time}" class="img-rounded" height="42" width="42" /></td>
+						<td><div class="btn-group pull-right">
+							<a class="delete btn-sm btn btn-danger" th:href="@{/palpites/delete/{id}(id=${palpite.idpalpite})}">Excluir</a>
+							</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
